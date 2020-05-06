@@ -1,0 +1,16 @@
+html
+html
+    head
+        title SMS Form
+    body
+        form(method = "POST")
+            div
+                label(for = "text") Message:
+                input(name = "text" value = "Lorem Ipsum Dolor")
+            br
+            div
+                label(for = "recipient") Recipient:
+                input(name = "recipient")
+                input(name = "timestamp" value=Date.now() hidden)
+            br
+            button(type = "submit") Send

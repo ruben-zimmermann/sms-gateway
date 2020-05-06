@@ -2,7 +2,7 @@
   "name": "sms-gateway",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.ts",
   "scripts": {
     "test": "jest --coverge",
     "test:watch": "jest --coverage --watchAll",
@@ -10,7 +10,8 @@
     "build:watch": "onchange 'src/**/*.ts' -- npm run build",
     "view:coverage": "serve coverage/lcov-report",
     "clean": "rm -rf coverage src/**/*.js src/**/*.map",
-    "start": "node src/index.js"
+    "start": "ts-node src/server.ts",
+    "cron": "ts-node src/sendMessage.ts"
   },
   "keywords": [],
   "author": "",
@@ -27,15 +28,20 @@
     "source-map-support": "^0.5.19",
     "supertest": "^4.0.2",
     "ts-jest": "^25.4.0",
+    "ts-node": "^8.10.1",
     "typescript": "^3.8.3"
   },
   "dependencies": {
     "@types/axios": "^0.14.0",
+    "@types/cron": "^1.7.2",
     "@types/xml2js": "^0.4.5",
     "D": "^1.0.0",
     "axios": "^0.19.2",
+    "cron": "^1.8.2",
     "express": "^4.17.1",
     "moment": "^2.24.0",
+    "nodemon": "^2.0.3",
+    "pug": "^2.0.4",
     "xml2js": "^0.4.23"
   }
 }
